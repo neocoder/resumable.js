@@ -116,7 +116,7 @@
       }
     };
     $.indexOf = function(array, obj) {
-    	if (array.indexOf) { return array.indexOf(obj); }     
+    	if (array.indexOf) { return array.indexOf(obj); }
     	for (var i = 0; i < array.length; i++) {
             if (array[i] === obj) { return i; }
         }
@@ -219,6 +219,12 @@
     };
 
     var onDrop = function(e){
+      // Processing only File and Folders
+      const isDroppingFiles = e.dataTransfer && e.dataTransfer.types && e.dataTransfer.types[0] === 'Files';
+      if ( !isDroppingFiles ) {
+        return;
+      }
+
       e.currentTarget.classList.remove($.getOpt('dragOverClass'));
       $h.stopEvent(e);
 
