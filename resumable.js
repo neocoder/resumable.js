@@ -116,7 +116,7 @@
       }
     };
     $.indexOf = function(array, obj) {
-    	if (array.indexOf) { return array.indexOf(obj); }     
+    	if (array.indexOf) { return array.indexOf(obj); }
     	for (var i = 0; i < array.length; i++) {
             if (array[i] === obj) { return i; }
         }
@@ -784,7 +784,7 @@
         }, false);
         $.loaded = 0;
         $.pendingRetry = false;
-        $.callback('progress');
+        $.callback('progress', $.message());
 
         // Done (either done, failed or retry)
         var doneHandler = function(e){
