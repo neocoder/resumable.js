@@ -790,7 +790,7 @@
         }, false);
         $.loaded = 0;
         $.pendingRetry = false;
-        $.callback('progress');
+        $.callback('progress', $.message());
 
         // Done (either done, failed or retry)
         var doneHandler = function(e){
